@@ -49,8 +49,8 @@ function getWeather(coord){
         })
 }
 
-function setInfo(weather){
-    city.innerHTML = weather.name
+function setInfo(weather, name){
+    city.innerHTML = name
     desc.innerHTML = weather.weather[0].main
     currentTemp.innerHTML = `${Math.floor(weather.main.temp - 273)}°C`
     tempMin.innerHTML = `Min ${Math.floor(weather.main.temp_min - 273)}°C`
@@ -84,7 +84,7 @@ searchButton.addEventListener('click', e =>{
             let weatherInfo = {}
             getWeather(coords)
                 .then(data => {
-                    setInfo(data)
+                    setInfo(data, cityName)
                     enablePicture(data.weather[0].icon)
                 })
         })
