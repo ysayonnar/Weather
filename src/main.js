@@ -19,7 +19,7 @@ let cityName = ''
 
 
 function getCoords(name){
-    const geocodeUrl = `http://api.openweathermap.org/geo/1.0/direct?q=${name}&appid=${apiKey}`
+    const geocodeUrl = `https://api.openweathermap.org/geo/1.0/direct?q=${name}&appid=${apiKey}`
     return fetch(geocodeUrl)
         .then(response => {
             if(response.ok){
