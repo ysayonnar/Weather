@@ -84,7 +84,6 @@ searchButton.addEventListener('click', e =>{
             let weatherInfo = {}
             getWeather(coords)
                 .then(data => {
-                    console.log(data)
                     setInfo(data)
                     enablePicture(data.weather[0].icon)
                 })
